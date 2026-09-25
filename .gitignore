@@ -1,0 +1,12 @@
+# large corpus files (tens of GB, never commit these)
+openwebtext/*.txt
+!openwebtext/vocab*.txt
+
+# model checkpoints (up to hundreds of MB, exceed GitHub's file size limits)
+*.pkl
+
+# python / notebook / anaconda cruft
+__pycache__/
+.ipynb_checkpoints/
+anaconda_projects/
+*.pyc

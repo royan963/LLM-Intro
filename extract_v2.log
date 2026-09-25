@@ -1,0 +1,24 @@
+total .xz archives: 20610, train: 18549, val: 2061
+openwebtext/train_split_v2.txt: 500/18549 archives | 195214 docs | 0.5 min elapsed | ETA 16.7 min
+openwebtext/train_split_v2.txt: 1000/18549 archives | 391590 docs | 0.9 min elapsed | ETA 16.4 min
+openwebtext/train_split_v2.txt: 1500/18549 archives | 587082 docs | 1.4 min elapsed | ETA 16.0 min
+openwebtext/train_split_v2.txt: 2000/18549 archives | 783937 docs | 1.9 min elapsed | ETA 15.6 min
+openwebtext/train_split_v2.txt: 2500/18549 archives | 979434 docs | 2.4 min elapsed | ETA 15.2 min
+openwebtext/train_split_v2.txt: 3000/18549 archives | 1175211 docs | 2.8 min elapsed | ETA 14.5 min
+openwebtext/train_split_v2.txt: 3500/18549 archives | 1369688 docs | 3.3 min elapsed | ETA 14.1 min
+openwebtext/train_split_v2.txt: 4000/18549 archives | 1565372 docs | 3.7 min elapsed | ETA 13.6 min
+openwebtext/train_split_v2.txt: 4500/18549 archives | 1759743 docs | 4.2 min elapsed | ETA 13.2 min
+openwebtext/train_split_v2.txt: 5000/18549 archives | 1955622 docs | 4.7 min elapsed | ETA 12.8 min
+openwebtext/train_split_v2.txt: 5500/18549 archives | 2149941 docs | 5.2 min elapsed | ETA 12.3 min
+openwebtext/train_split_v2.txt: 6000/18549 archives | 2345496 docs | 5.7 min elapsed | ETA 11.8 min
+openwebtext/train_split_v2.txt: 6500/18549 archives | 2540279 docs | 6.1 min elapsed | ETA 11.4 min
+openwebtext/train_split_v2.txt: 7000/18549 archives | 2735835 docs | 6.6 min elapsed | ETA 10.9 min
+openwebtext/train_split_v2.txt: 7500/18549 archives | 2930353 docs | 7.1 min elapsed | ETA 10.5 min
+openwebtext/train_split_v2.txt: 8000/18549 archives | 3126228 docs | 7.6 min elapsed | ETA 10.0 min
+openwebtext/train_split_v2.txt: 8500/18549 archives | 3320075 docs | 8.1 min elapsed | ETA 9.5 min
+openwebtext/train_split_v2.txt: 9000/18549 archives | 3514450 docs | 8.5 min elapsed | ETA 9.1 min
+openwebtext/train_split_v2.txt: 9500/18549 archives | 3708307 docs | 9.0 min elapsed | ETA 8.6 min
+openwebtext/train_split_v2.txt: 10000/18549 archives | 3904084 docs | 9.5 min elapsed | ETA 8.1 min
+openwebtext/train_split_v2.txt: 10500/18549 archives | 4097598 docs | 10.0 min elapsed | ETA 7.7 min
+openwebtext/train_split_v2.txt: 11000/18549 archives | 4292300 docs | 10.5 min elapsed | ETA 7.2 min
+openwebtext/train_split_v2.txt: 11500/18549 archives | 4486262 docs | 11.0 min elapsed | ETA 6.7 min

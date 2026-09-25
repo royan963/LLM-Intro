@@ -1,0 +1,318 @@
+device: cuda
+block_size=256 batch_size=64 n_embd=384 n_layer=8 n_head=8
+max_lr=0.0003 min_lr=3e-05 warmup_iters=200 grad_clip=1.0
+time_budget_hours=4.0 eval_interval=250 eval_iters=50
+vocab_size: 254
+model parameters: 14,480,894
+step       0 |     0.0 min | lr 1.50e-06 | train 5.5751 | val 5.5740
+  new best val loss 5.5740 -> saved model-02-best.pkl
+step     250 |     0.9 min | lr 3.00e-04 | train 2.3244 | val 2.3528
+  new best val loss 2.3528 -> saved model-02-best.pkl
+step     500 |     1.8 min | lr 3.00e-04 | train 2.1006 | val 2.1014
+  new best val loss 2.1014 -> saved model-02-best.pkl
+step     750 |     2.7 min | lr 3.00e-04 | train 1.8115 | val 1.8154
+  new best val loss 1.8154 -> saved model-02-best.pkl
+step    1000 |     3.6 min | lr 3.00e-04 | train 1.6478 | val 1.6443
+  new best val loss 1.6443 -> saved model-02-best.pkl
+step    1250 |     4.5 min | lr 3.00e-04 | train 1.5300 | val 1.5870
+  new best val loss 1.5870 -> saved model-02-best.pkl
+step    1500 |     5.4 min | lr 3.00e-04 | train 1.5119 | val 1.4846
+  new best val loss 1.4846 -> saved model-02-best.pkl
+step    1750 |     6.3 min | lr 3.00e-04 | train 1.5239 | val 1.3968
+  new best val loss 1.3968 -> saved model-02-best.pkl
+step    2000 |     7.2 min | lr 2.99e-04 | train 1.4313 | val 1.4282
+step    2250 |     8.0 min | lr 2.99e-04 | train 1.4479 | val 1.4380
+step    2500 |     8.9 min | lr 2.99e-04 | train 1.4456 | val 1.4553
+step    2750 |     9.8 min | lr 2.99e-04 | train 1.3404 | val 1.3462
+  new best val loss 1.3462 -> saved model-02-best.pkl
+step    3000 |    10.7 min | lr 2.99e-04 | train 1.3262 | val 1.3652
+step    3250 |    11.6 min | lr 2.98e-04 | train 1.3341 | val 1.3086
+  new best val loss 1.3086 -> saved model-02-best.pkl
+step    3500 |    12.5 min | lr 2.98e-04 | train 1.3184 | val 1.2753
+  new best val loss 1.2753 -> saved model-02-best.pkl
+step    3750 |    13.4 min | lr 2.98e-04 | train 1.2985 | val 1.2347
+  new best val loss 1.2347 -> saved model-02-best.pkl
+step    4000 |    14.3 min | lr 2.98e-04 | train 1.2659 | val 1.3119
+step    4250 |    15.2 min | lr 2.97e-04 | train 1.3211 | val 1.2626
+step    4500 |    16.1 min | lr 2.97e-04 | train 1.3215 | val 1.2491
+step    4750 |    17.0 min | lr 2.97e-04 | train 1.2276 | val 1.2740
+step    5000 |    17.8 min | lr 2.96e-04 | train 1.2928 | val 1.2511
+step    5250 |    18.7 min | lr 2.96e-04 | train 1.2722 | val 1.2827
+step    5500 |    19.6 min | lr 2.96e-04 | train 1.2267 | val 1.2507
+step    5750 |    20.5 min | lr 2.95e-04 | train 1.2151 | val 1.2426
+step    6000 |    21.4 min | lr 2.95e-04 | train 1.2513 | val 1.2053
+  new best val loss 1.2053 -> saved model-02-best.pkl
+step    6250 |    22.3 min | lr 2.94e-04 | train 1.2132 | val 1.1762
+  new best val loss 1.1762 -> saved model-02-best.pkl
+step    6500 |    23.2 min | lr 2.94e-04 | train 1.1506 | val 1.2578
+step    6750 |    24.1 min | lr 2.93e-04 | train 1.2409 | val 1.2037
+step    7000 |    25.0 min | lr 2.93e-04 | train 1.2179 | val 1.1746
+  new best val loss 1.1746 -> saved model-02-best.pkl
+step    7250 |    25.9 min | lr 2.92e-04 | train 1.1794 | val 1.1761
+step    7500 |    26.8 min | lr 2.92e-04 | train 1.1972 | val 1.1822
+step    7750 |    27.6 min | lr 2.91e-04 | train 1.1894 | val 1.1470
+  new best val loss 1.1470 -> saved model-02-best.pkl
+step    8000 |    28.5 min | lr 2.91e-04 | train 1.1742 | val 1.1921
+step    8250 |    29.4 min | lr 2.90e-04 | train 1.1872 | val 1.1891
+step    8500 |    30.3 min | lr 2.90e-04 | train 1.1535 | val 1.1656
+step    8750 |    31.2 min | lr 2.89e-04 | train 1.1952 | val 1.1627
+step    9000 |    32.1 min | lr 2.88e-04 | train 1.1570 | val 1.1799
+step    9250 |    33.0 min | lr 2.88e-04 | train 1.1633 | val 1.2011
+step    9500 |    33.9 min | lr 2.87e-04 | train 1.1780 | val 1.1527
+step    9750 |    34.8 min | lr 2.86e-04 | train 1.1647 | val 1.1741
+step   10000 |    35.7 min | lr 2.86e-04 | train 1.1568 | val 1.1722
+step   10250 |    36.6 min | lr 2.85e-04 | train 1.1559 | val 1.1897
+step   10500 |    37.4 min | lr 2.84e-04 | train 1.1372 | val 1.1377
+  new best val loss 1.1377 -> saved model-02-best.pkl
+step   10750 |    38.3 min | lr 2.83e-04 | train 1.1579 | val 1.1498
+step   11000 |    39.2 min | lr 2.83e-04 | train 1.1612 | val 1.1378
+step   11250 |    40.1 min | lr 2.82e-04 | train 1.1283 | val 1.1598
+step   11500 |    41.0 min | lr 2.81e-04 | train 1.1501 | val 1.1318
+  new best val loss 1.1318 -> saved model-02-best.pkl
+step   11750 |    41.9 min | lr 2.80e-04 | train 1.1322 | val 1.1297
+  new best val loss 1.1297 -> saved model-02-best.pkl
+step   12000 |    42.8 min | lr 2.79e-04 | train 1.1376 | val 1.1360
+step   12250 |    43.7 min | lr 2.79e-04 | train 1.1438 | val 1.1741
+step   12500 |    44.6 min | lr 2.78e-04 | train 1.1730 | val 1.1030
+  new best val loss 1.1030 -> saved model-02-best.pkl
+step   12750 |    45.5 min | lr 2.77e-04 | train 1.1296 | val 1.1060
+step   13000 |    46.4 min | lr 2.76e-04 | train 1.1611 | val 1.0911
+  new best val loss 1.0911 -> saved model-02-best.pkl
+step   13250 |    47.3 min | lr 2.75e-04 | train 1.1337 | val 1.1275
+step   13500 |    48.1 min | lr 2.74e-04 | train 1.1622 | val 1.0764
+  new best val loss 1.0764 -> saved model-02-best.pkl
+step   13750 |    49.0 min | lr 2.73e-04 | train 1.1454 | val 1.1075
+step   14000 |    49.9 min | lr 2.72e-04 | train 1.1299 | val 1.1516
+step   14250 |    50.8 min | lr 2.71e-04 | train 1.1631 | val 1.1218
+step   14500 |    51.7 min | lr 2.70e-04 | train 1.1371 | val 1.0887
+step   14750 |    52.6 min | lr 2.69e-04 | train 1.0966 | val 1.1367
+step   15000 |    53.5 min | lr 2.68e-04 | train 1.1199 | val 1.1008
+step   15250 |    54.4 min | lr 2.67e-04 | train 1.0983 | val 1.0943
+step   15500 |    55.3 min | lr 2.66e-04 | train 1.1383 | val 1.1450
+step   15750 |    56.2 min | lr 2.65e-04 | train 1.1217 | val 1.1422
+step   16000 |    57.0 min | lr 2.64e-04 | train 1.1464 | val 1.0909
+step   16250 |    57.9 min | lr 2.63e-04 | train 1.1544 | val 1.1030
+step   16500 |    58.8 min | lr 2.62e-04 | train 1.1032 | val 1.1238
+step   16750 |    59.7 min | lr 2.61e-04 | train 1.1333 | val 1.1280
+step   17000 |    60.6 min | lr 2.60e-04 | train 1.1939 | val 1.0702
+  new best val loss 1.0702 -> saved model-02-best.pkl
+step   17250 |    61.5 min | lr 2.59e-04 | train 1.1291 | val 1.1528
+step   17500 |    62.4 min | lr 2.57e-04 | train 1.1447 | val 1.1103
+step   17750 |    63.3 min | lr 2.56e-04 | train 1.0922 | val 1.1238
+step   18000 |    64.2 min | lr 2.55e-04 | train 1.1013 | val 1.1323
+step   18250 |    65.1 min | lr 2.54e-04 | train 1.1166 | val 1.0805
+step   18500 |    65.9 min | lr 2.53e-04 | train 1.1485 | val 1.1520
+step   18750 |    66.8 min | lr 2.52e-04 | train 1.1387 | val 1.1011
+step   19000 |    67.7 min | lr 2.50e-04 | train 1.1145 | val 1.1587
+step   19250 |    68.6 min | lr 2.49e-04 | train 1.1405 | val 1.1453
+step   19500 |    69.5 min | lr 2.48e-04 | train 1.1151 | val 1.1223
+step   19750 |    70.4 min | lr 2.47e-04 | train 1.1018 | val 1.0932
+step   20000 |    71.3 min | lr 2.45e-04 | train 1.0951 | val 1.0778
+step   20250 |    72.2 min | lr 2.44e-04 | train 1.0868 | val 1.0729
+step   20500 |    73.1 min | lr 2.43e-04 | train 1.0650 | val 1.0967
+step   20750 |    74.0 min | lr 2.42e-04 | train 1.0996 | val 1.0786
+step   21000 |    74.8 min | lr 2.40e-04 | train 1.0981 | val 1.0905
+step   21250 |    75.7 min | lr 2.39e-04 | train 1.0944 | val 1.1088
+step   21500 |    76.6 min | lr 2.38e-04 | train 1.0951 | val 1.0832
+step   21750 |    77.5 min | lr 2.36e-04 | train 1.1098 | val 1.1390
+step   22000 |    78.4 min | lr 2.35e-04 | train 1.0870 | val 1.0941
+step   22250 |    79.3 min | lr 2.34e-04 | train 1.0789 | val 1.0672
+  new best val loss 1.0672 -> saved model-02-best.pkl
+step   22500 |    80.2 min | lr 2.32e-04 | train 1.0864 | val 1.0588
+  new best val loss 1.0588 -> saved model-02-best.pkl
+step   22750 |    81.1 min | lr 2.31e-04 | train 1.1049 | val 1.1074
+step   23000 |    82.0 min | lr 2.29e-04 | train 1.0885 | val 1.0478
+  new best val loss 1.0478 -> saved model-02-best.pkl
+step   23250 |    82.8 min | lr 2.28e-04 | train 1.0900 | val 1.0854
+step   23500 |    83.7 min | lr 2.27e-04 | train 1.0739 | val 1.0622
+step   23750 |    84.6 min | lr 2.25e-04 | train 1.0739 | val 1.0889
+step   24000 |    85.5 min | lr 2.24e-04 | train 1.0811 | val 1.1120
+step   24250 |    86.4 min | lr 2.22e-04 | train 1.0540 | val 1.1190
+step   24500 |    87.3 min | lr 2.21e-04 | train 1.0559 | val 1.1009
+step   24750 |    88.2 min | lr 2.20e-04 | train 1.1069 | val 1.1043
+step   25000 |    89.1 min | lr 2.18e-04 | train 1.0859 | val 1.1232
+step   25250 |    90.0 min | lr 2.17e-04 | train 1.0642 | val 1.1017
+step   25500 |    90.9 min | lr 2.15e-04 | train 1.0590 | val 1.0767
+step   25750 |    91.7 min | lr 2.14e-04 | train 1.0778 | val 1.0741
+step   26000 |    92.6 min | lr 2.12e-04 | train 1.1327 | val 1.0580
+step   26250 |    93.5 min | lr 2.11e-04 | train 1.0483 | val 1.0456
+  new best val loss 1.0456 -> saved model-02-best.pkl
+step   26500 |    94.4 min | lr 2.09e-04 | train 1.0655 | val 1.0547
+step   26750 |    95.3 min | lr 2.08e-04 | train 1.1103 | val 1.0853
+step   27000 |    96.2 min | lr 2.06e-04 | train 1.0911 | val 1.0746
+step   27250 |    97.1 min | lr 2.05e-04 | train 1.0781 | val 1.1141
+step   27500 |    98.0 min | lr 2.03e-04 | train 1.0539 | val 1.0562
+step   27750 |    98.8 min | lr 2.02e-04 | train 1.0731 | val 1.0337
+  new best val loss 1.0337 -> saved model-02-best.pkl
+step   28000 |    99.7 min | lr 2.00e-04 | train 1.0706 | val 1.0690
+step   28250 |   100.6 min | lr 1.99e-04 | train 1.0359 | val 1.0659
+step   28500 |   101.5 min | lr 1.97e-04 | train 1.0997 | val 1.0864
+step   28750 |   102.4 min | lr 1.96e-04 | train 1.0526 | val 1.1115
+step   29000 |   103.3 min | lr 1.94e-04 | train 1.0876 | val 1.0350
+step   29250 |   104.2 min | lr 1.93e-04 | train 1.0798 | val 1.0762
+step   29500 |   105.0 min | lr 1.91e-04 | train 1.0978 | val 1.0732
+step   29750 |   105.9 min | lr 1.90e-04 | train 1.0542 | val 1.0752
+step   30000 |   106.8 min | lr 1.88e-04 | train 1.0339 | val 1.0589
+step   30250 |   107.7 min | lr 1.87e-04 | train 1.0427 | val 1.0729
+step   30500 |   108.6 min | lr 1.85e-04 | train 1.0702 | val 1.0352
+step   30750 |   109.5 min | lr 1.84e-04 | train 1.0931 | val 1.0533
+step   31000 |   110.4 min | lr 1.82e-04 | train 1.0642 | val 1.0642
+step   31250 |   111.2 min | lr 1.80e-04 | train 1.0562 | val 1.0757
+step   31500 |   112.1 min | lr 1.79e-04 | train 1.0485 | val 1.0242
+  new best val loss 1.0242 -> saved model-02-best.pkl
+step   31750 |   113.0 min | lr 1.77e-04 | train 1.0397 | val 1.0149
+  new best val loss 1.0149 -> saved model-02-best.pkl
+step   32000 |   113.9 min | lr 1.76e-04 | train 1.0388 | val 1.0333
+step   32250 |   114.8 min | lr 1.74e-04 | train 1.0495 | val 1.0561
+step   32500 |   115.7 min | lr 1.73e-04 | train 1.0439 | val 1.0432
+step   32750 |   116.6 min | lr 1.71e-04 | train 1.0657 | val 1.0461
+step   33000 |   117.5 min | lr 1.69e-04 | train 1.0392 | val 1.0443
+step   33250 |   118.3 min | lr 1.68e-04 | train 1.0146 | val 1.0548
+step   33500 |   119.2 min | lr 1.66e-04 | train 1.0647 | val 1.0443
+step   33750 |   120.1 min | lr 1.65e-04 | train 0.9945 | val 1.0513
+step   34000 |   121.0 min | lr 1.63e-04 | train 1.0338 | val 1.0355
+step   34250 |   121.9 min | lr 1.62e-04 | train 1.0622 | val 1.0557
+step   34500 |   122.8 min | lr 1.60e-04 | train 1.0541 | val 1.0265
+step   34750 |   123.7 min | lr 1.59e-04 | train 1.0692 | val 1.0726
+step   35000 |   124.5 min | lr 1.57e-04 | train 1.0280 | val 1.0515
+step   35250 |   125.4 min | lr 1.55e-04 | train 1.0476 | val 1.0519
+step   35500 |   126.3 min | lr 1.54e-04 | train 1.0113 | val 1.0959
+step   35750 |   127.2 min | lr 1.52e-04 | train 1.0433 | val 1.0566
+step   36000 |   128.1 min | lr 1.51e-04 | train 1.0317 | val 1.0591
+step   36250 |   129.0 min | lr 1.49e-04 | train 1.0459 | val 1.0268
+step   36500 |   129.9 min | lr 1.48e-04 | train 1.0494 | val 1.0733
+step   36750 |   130.8 min | lr 1.46e-04 | train 1.0544 | val 1.0520
+step   37000 |   131.6 min | lr 1.45e-04 | train 1.1117 | val 1.0472
+step   37250 |   132.5 min | lr 1.43e-04 | train 1.0437 | val 1.0613
+step   37500 |   133.4 min | lr 1.41e-04 | train 1.0565 | val 1.0724
+step   37750 |   134.3 min | lr 1.40e-04 | train 1.0309 | val 1.0348
+step   38000 |   135.2 min | lr 1.38e-04 | train 1.0641 | val 1.1013
+step   38250 |   136.1 min | lr 1.37e-04 | train 1.0387 | val 1.0872
+step   38500 |   137.0 min | lr 1.35e-04 | train 1.0274 | val 1.0597
+step   38750 |   137.8 min | lr 1.34e-04 | train 1.0226 | val 1.0554
+step   39000 |   138.7 min | lr 1.32e-04 | train 1.0613 | val 1.0229
+step   39250 |   139.6 min | lr 1.31e-04 | train 1.0308 | val 1.0230
+step   39500 |   140.5 min | lr 1.29e-04 | train 1.0126 | val 1.0445
+step   39750 |   141.4 min | lr 1.28e-04 | train 1.0539 | val 1.0127
+  new best val loss 1.0127 -> saved model-02-best.pkl
+step   40000 |   142.3 min | lr 1.26e-04 | train 1.0549 | val 1.0358
+step   40250 |   143.2 min | lr 1.25e-04 | train 1.0141 | val 1.0278
+step   40500 |   144.1 min | lr 1.23e-04 | train 1.0530 | val 1.0431
+step   40750 |   144.9 min | lr 1.22e-04 | train 1.0239 | val 1.0343
+step   41000 |   145.8 min | lr 1.20e-04 | train 1.0464 | val 1.0538
+step   41250 |   146.7 min | lr 1.19e-04 | train 1.0188 | val 1.0481
+step   41500 |   147.6 min | lr 1.17e-04 | train 1.0424 | val 1.0341
+step   41750 |   148.5 min | lr 1.16e-04 | train 1.0579 | val 1.0140
+step   42000 |   149.4 min | lr 1.14e-04 | train 1.0253 | val 1.0426
+step   42250 |   150.3 min | lr 1.13e-04 | train 1.0360 | val 1.0282
+step   42500 |   151.1 min | lr 1.11e-04 | train 1.0439 | val 1.0701
+step   42750 |   152.0 min | lr 1.10e-04 | train 1.0212 | val 1.0077
+  new best val loss 1.0077 -> saved model-02-best.pkl
+step   43000 |   152.9 min | lr 1.09e-04 | train 0.9914 | val 1.0174
+step   43250 |   153.8 min | lr 1.07e-04 | train 1.0347 | val 1.0322
+step   43500 |   154.7 min | lr 1.06e-04 | train 1.0438 | val 1.0719
+step   43750 |   155.6 min | lr 1.04e-04 | train 1.0345 | val 1.0246
+step   44000 |   156.5 min | lr 1.03e-04 | train 1.0729 | val 1.0670
+step   44250 |   157.4 min | lr 1.02e-04 | train 1.0384 | val 1.0082
+step   44500 |   158.3 min | lr 1.00e-04 | train 1.0313 | val 1.0457
+step   44750 |   159.1 min | lr 9.88e-05 | train 1.0396 | val 1.0241
+step   45000 |   160.0 min | lr 9.75e-05 | train 1.0897 | val 1.0097
+step   45250 |   160.9 min | lr 9.61e-05 | train 1.0611 | val 1.0145
+step   45500 |   161.8 min | lr 9.48e-05 | train 1.0294 | val 1.0142
+step   45750 |   162.7 min | lr 9.34e-05 | train 1.0219 | val 1.0244
+step   46000 |   163.6 min | lr 9.21e-05 | train 0.9991 | val 1.0339
+step   46250 |   164.5 min | lr 9.08e-05 | train 1.0525 | val 1.0165
+step   46500 |   165.3 min | lr 8.95e-05 | train 1.0499 | val 1.0272
+step   46750 |   166.2 min | lr 8.82e-05 | train 1.0360 | val 1.0425
+step   47000 |   167.1 min | lr 8.69e-05 | train 1.0807 | val 1.0186
+step   47250 |   168.0 min | lr 8.56e-05 | train 1.0265 | val 1.0045
+  new best val loss 1.0045 -> saved model-02-best.pkl
+step   47500 |   168.9 min | lr 8.44e-05 | train 1.0139 | val 1.0227
+step   47750 |   169.8 min | lr 8.31e-05 | train 1.0203 | val 1.0485
+step   48000 |   170.7 min | lr 8.19e-05 | train 1.0121 | val 1.0737
+step   48250 |   171.6 min | lr 8.06e-05 | train 1.0233 | val 1.0092
+step   48500 |   172.5 min | lr 7.94e-05 | train 1.0390 | val 1.0304
+step   48750 |   173.3 min | lr 7.82e-05 | train 1.0594 | val 1.0285
+step   49000 |   174.2 min | lr 7.70e-05 | train 1.0064 | val 1.0602
+step   49250 |   175.1 min | lr 7.58e-05 | train 1.0154 | val 1.0285
+step   49500 |   176.0 min | lr 7.47e-05 | train 1.0292 | val 1.0324
+step   49750 |   176.9 min | lr 7.35e-05 | train 1.0180 | val 0.9985
+  new best val loss 0.9985 -> saved model-02-best.pkl
+step   50000 |   177.8 min | lr 7.23e-05 | train 1.0368 | val 1.0234
+step   50250 |   178.7 min | lr 7.12e-05 | train 1.0047 | val 1.0342
+step   50500 |   179.6 min | lr 7.01e-05 | train 1.0151 | val 0.9897
+  new best val loss 0.9897 -> saved model-02-best.pkl
+step   50750 |   180.5 min | lr 6.90e-05 | train 1.0472 | val 1.0394
+step   51000 |   181.3 min | lr 6.79e-05 | train 1.0149 | val 1.0598
+step   51250 |   182.2 min | lr 6.68e-05 | train 1.0223 | val 1.0285
+step   51500 |   183.1 min | lr 6.57e-05 | train 1.0341 | val 1.0348
+step   51750 |   184.0 min | lr 6.47e-05 | train 1.0398 | val 1.0545
+step   52000 |   184.9 min | lr 6.36e-05 | train 1.0218 | val 1.0267
+step   52250 |   185.8 min | lr 6.26e-05 | train 1.0284 | val 1.0475
+step   52500 |   186.7 min | lr 6.16e-05 | train 0.9785 | val 1.0057
+step   52750 |   187.6 min | lr 6.06e-05 | train 1.0168 | val 1.0236
+step   53000 |   188.5 min | lr 5.96e-05 | train 1.0616 | val 1.0693
+step   53250 |   189.4 min | lr 5.86e-05 | train 1.0961 | val 1.0276
+step   53500 |   190.2 min | lr 5.76e-05 | train 1.0116 | val 1.0069
+step   53750 |   191.1 min | lr 5.67e-05 | train 1.0435 | val 1.0363
+step   54000 |   192.0 min | lr 5.58e-05 | train 0.9814 | val 1.0457
+step   54250 |   192.9 min | lr 5.48e-05 | train 0.9901 | val 0.9794
+  new best val loss 0.9794 -> saved model-02-best.pkl
+step   54500 |   193.8 min | lr 5.39e-05 | train 1.0217 | val 1.0461
+step   54750 |   194.7 min | lr 5.31e-05 | train 1.0243 | val 1.0132
+step   55000 |   195.6 min | lr 5.22e-05 | train 1.0103 | val 1.0224
+step   55250 |   196.5 min | lr 5.13e-05 | train 1.0162 | val 1.0051
+step   55500 |   197.4 min | lr 5.05e-05 | train 1.0223 | val 0.9749
+  new best val loss 0.9749 -> saved model-02-best.pkl
+step   55750 |   198.2 min | lr 4.97e-05 | train 1.0266 | val 1.0106
+step   56000 |   199.1 min | lr 4.89e-05 | train 1.0371 | val 0.9736
+  new best val loss 0.9736 -> saved model-02-best.pkl
+step   56250 |   200.0 min | lr 4.81e-05 | train 1.0103 | val 1.0248
+step   56500 |   200.9 min | lr 4.73e-05 | train 1.0004 | val 1.0102
+step   56750 |   201.8 min | lr 4.65e-05 | train 1.0216 | val 1.0153
+step   57000 |   202.7 min | lr 4.58e-05 | train 1.0085 | val 1.0374
+step   57250 |   203.6 min | lr 4.50e-05 | train 1.0506 | val 1.0371
+step   57500 |   204.5 min | lr 4.43e-05 | train 0.9752 | val 1.0048
+step   57750 |   205.4 min | lr 4.36e-05 | train 1.0225 | val 1.0336
+step   58000 |   206.3 min | lr 4.30e-05 | train 1.0007 | val 1.0111
+step   58250 |   207.2 min | lr 4.23e-05 | train 1.0129 | val 1.0187
+step   58500 |   208.0 min | lr 4.16e-05 | train 1.0074 | val 1.0189
+step   58750 |   208.9 min | lr 4.10e-05 | train 1.0089 | val 1.0134
+step   59000 |   209.8 min | lr 4.04e-05 | train 0.9862 | val 0.9974
+step   59250 |   210.7 min | lr 3.98e-05 | train 1.0106 | val 1.0061
+step   59500 |   211.6 min | lr 3.92e-05 | train 0.9997 | val 0.9960
+step   59750 |   212.5 min | lr 3.87e-05 | train 0.9963 | val 1.0330
+step   60000 |   213.4 min | lr 3.81e-05 | train 1.0542 | val 1.0066
+step   60250 |   214.3 min | lr 3.76e-05 | train 1.0065 | val 1.0114
+step   60500 |   215.2 min | lr 3.71e-05 | train 1.0324 | val 0.9969
+step   60750 |   216.0 min | lr 3.66e-05 | train 1.0092 | val 0.9916
+step   61000 |   216.9 min | lr 3.61e-05 | train 1.0143 | val 1.0365
+step   61250 |   217.8 min | lr 3.56e-05 | train 1.0131 | val 1.0146
+step   61500 |   218.7 min | lr 3.52e-05 | train 1.0244 | val 0.9910
+step   61750 |   219.6 min | lr 3.48e-05 | train 1.0031 | val 1.0106
+step   62000 |   220.5 min | lr 3.44e-05 | train 1.0257 | val 0.9885
+step   62250 |   221.4 min | lr 3.40e-05 | train 1.0265 | val 1.0014
+step   62500 |   222.3 min | lr 3.36e-05 | train 1.0089 | val 0.9923
+step   62750 |   223.2 min | lr 3.33e-05 | train 0.9813 | val 1.0680
+step   63000 |   224.1 min | lr 3.29e-05 | train 1.0381 | val 1.0051
+step   63250 |   224.9 min | lr 3.26e-05 | train 0.9752 | val 1.0600
+step   63500 |   225.8 min | lr 3.23e-05 | train 0.9747 | val 1.0283
+step   63750 |   226.7 min | lr 3.20e-05 | train 1.0305 | val 0.9942
+step   64000 |   227.6 min | lr 3.18e-05 | train 1.0215 | val 1.0271
+step   64250 |   228.5 min | lr 3.15e-05 | train 1.0394 | val 1.0313
+step   64500 |   229.4 min | lr 3.13e-05 | train 1.0288 | val 1.0167
+step   64750 |   230.3 min | lr 3.11e-05 | train 1.0282 | val 1.0039
+step   65000 |   231.2 min | lr 3.09e-05 | train 1.0169 | val 1.0066
+step   65250 |   232.0 min | lr 3.07e-05 | train 1.0328 | val 0.9917
+step   65500 |   232.9 min | lr 3.06e-05 | train 0.9924 | val 1.0296
+step   65750 |   233.8 min | lr 3.04e-05 | train 1.0355 | val 0.9990
+step   66000 |   234.7 min | lr 3.03e-05 | train 1.0061 | val 1.0307
+step   66250 |   235.6 min | lr 3.02e-05 | train 0.9964 | val 1.0010
+step   66500 |   236.5 min | lr 3.01e-05 | train 0.9978 | val 0.9980
+step   66750 |   237.4 min | lr 3.01e-05 | train 1.0017 | val 1.0717
+step   67000 |   238.3 min | lr 3.00e-05 | train 1.0120 | val 1.0328
+step   67250 |   239.2 min | lr 3.00e-05 | train 1.0104 | val 1.0055
+time budget of 4.0h reached at step 67488, stopping
+FINAL step 67488 | train 0.9815 | val 0.9836
+best val loss over run: 0.9736
+TRAINING COMPLETE

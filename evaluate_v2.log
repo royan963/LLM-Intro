@@ -1,0 +1,46 @@
+device: cuda
+loading model parameters...
+loaded successfully
+
+===== PARAMETER COUNTS (model-02, cleaned vocab) =====
+vocab_size: 254
+Total parameters: 14,480,894
+  token_embedding_table: 97,536
+  position_embedding_table: 98,304
+  lm_head: 97,790
+  embedding+lm_head combined: 195,326
+  transformer blocks (all 8 layers): 14,186,496
+
+===== VALIDATION LOSS (200 random batches, independent offsets) =====
+Mean val loss: 1.0182 nats  (std across batches: 0.1499)
+Bits per character: 1.4690
+
+===== GENERATION SAMPLES =====
+
+--- prompt='The ' temperature=0.8 top_k=50 ---
+The approach is because of the majority, and a number of planes we should. We really should have experience the boss and planes to find early currency with the plane on a majority with international and morality and international bosses who interact with the radiation of the anti-March 1000s and who have not been the only corporate processes for production. In August 2014, August 2015, chairman of Spa
+
+--- prompt='The ' temperature=1.0 top_k=50 ---
+The mions have been named LYMA of internet graphic systems that levied very safe printed on any key. But the principle adjusts to the newest and other on-game things as similar to the system has similar to LyMa. 
+ 
+Volunteer as a systematical Power – most of which have operated for an awards of the celebrity, and some interest of the album’s Globe, Kevin Anselly, and who is designing medical orientati
+
+--- prompt='In 2019, ' temperature=0.8 top_k=50 ---
+In 2019, a complete development was at the level near Delivery in Delivery de Version, most of the most popular testing. 
+ 
+The interview was given up to 50 hours ago a day in Delivery as the test came to spark the advertising enemy. In the absence of the new story, as well as England's devices, will be financial because the story is not really an interesting deal. In addition to the integrity of the test 
+
+--- prompt='In 2019, ' temperature=1.0 top_k=50 ---
+In 2019, explaining the vote was faster. 
+ 
+Conservative conservatives told the Senate Democrat's bill earlier this year, "this is about 1,000 people who want [the committee to expand] proliferation to proposing poachers by many social media forces, including a constructed motorcycle diet," the Australian government spokesperson said: "They are not about very hatred or expanded without assuming that enviro
+
+--- prompt='Scientists' temperature=0.8 top_k=50 ---
+Scientists at LGBTQ and England Professors at this time are allowed to accept the benefit of their status as well as it to change the governance of this page of a lifetime international and credible job. 
+ 
+We’re getting everything in a written job discussing the charter we’re engaging in the path because we’re going to expect our governance and send our return, but we’re going to just get a rebel right to 
+
+--- prompt='Scientists' temperature=1.0 top_k=50 ---
+Scientists, and the company used to act part of efforts. However, similarly the other nice flights on the restaurant tomorrow, as Curves reached its company's attack for the Scientists. It took place to get their proposals made “funds in the report.” And in fact, the Del. 60 indicated that Curves would face free proposals to remain in elections but declaring that any election would receive Joe Nechipal and 
+
+===== DONE =====
