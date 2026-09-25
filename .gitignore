@@ -10,3 +10,7 @@ __pycache__/
 .ipynb_checkpoints/
 anaconda_projects/
 *.pyc
+
+# stray duplicate nested folder left over from an earlier repo layout
+# (safe to delete manually; kept on disk, just untracked here)
+/GPT Beginner/
