@@ -27,3 +27,5 @@ openwebtext/train_split_v2.txt: 12500/18549 archives | 4873533 docs | 12.0 min e
 openwebtext/train_split_v2.txt: 13000/18549 archives | 5068525 docs | 12.5 min elapsed | ETA 5.3 min
 openwebtext/train_split_v2.txt: 13500/18549 archives | 5264261 docs | 13.0 min elapsed | ETA 4.8 min
 openwebtext/train_split_v2.txt: 14000/18549 archives | 5460008 docs | 13.5 min elapsed | ETA 4.4 min
+openwebtext/train_split_v2.txt: 14500/18549 archives | 5654547 docs | 14.0 min elapsed | ETA 3.9 min
+openwebtext/train_split_v2.txt: 15000/18549 archives | 5850368 docs | 14.5 min elapsed | ETA 3.4 min
