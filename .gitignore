@@ -14,3 +14,6 @@ anaconda_projects/
 # stray duplicate nested folder left over from an earlier repo layout
 # (safe to delete manually; kept on disk, just untracked here)
 /GPT Beginner/
+
+# personal Claude Code settings (permission overrides), not for the team
+.claude/settings.local.json
