@@ -2,6 +2,34 @@
 
 A PyTorch implementation of a decoder-only, character-level GPT language model, built from the ground up (custom self-attention, multi-head attention, and transformer blocks — no `nn.Transformer` or Hugging Face). Includes a small proof-of-concept trained on *Dracula* and a larger version trained on OpenWebText, plus an interactive chat script for sampling from the trained model.
 
+## Who Built What
+
+This project was built in two phases: I wrote the original model and pipeline myself while learning, and later used [Claude Code](https://claude.com/claude-code) (Anthropic's AI coding assistant) to evaluate it, find bugs, and improve it. Commits made with Claude's help are marked `Co-Authored-By: Claude` in the git history.
+
+### What I built myself
+
+- **The GPT model from scratch**: `Head` (self-attention with a causal mask), `MultiHeadAttention`, `FeedForward`, `Block` (transformer block with residuals and layer norm), and the full `GPTLLM` model with token and positional embeddings and `generate()`.
+- **`torch-examples.ipynb`**: my scratch notebook for learning PyTorch basics (tensors, embeddings, softmax, matmul, CPU vs. GPU).
+- **`llm.ipynb`**: the bigram prototype trained on `dracula.txt` to get the training loop working.
+- **`gpt-v1.ipynb`**: the full GPT notebook trained on OpenWebText.
+- **`training.py`**: the original training script (memory-mapped random batch sampling, loss estimation, AdamW training loop, pickled checkpoints).
+- **`openwebtext/data-extract.py`**: the original OpenWebText extraction and train/val split.
+- **`chatbox.py`**: the interactive chat interface.
+- **`model-01.pkl`**: the first trained checkpoint (53M params).
+- The overall project design: a character-level, from-scratch GPT with no `nn.Transformer` or Hugging Face.
+
+### What Claude helped me do
+
+- **Evaluating my model**: wrote `evaluate.py`, `evaluate_v2.py` and `evaluate_v3.py` (parameter breakdown, validation loss over 200 batches, bits/char, sample generations).
+- **Finding the vocab problem**: noticed that 46.6% of `model-01`'s parameters went to a 32k-character vocab that was mostly Unicode noise, and wrote `build_vocab.py` to keep only the frequent characters.
+- **Improving training**: wrote `train_v2.py` / `train_v3.py`, which add a longer context (`block_size` 128 → 256), LR warmup + cosine decay, gradient clipping, and time-boxed training with checkpointing. The model architecture stayed mine.
+- **Finding the tar-parsing bug** in my `data-extract.py` (the `.xz` files are tar archives, so the corpus was full of tar headers and NUL bytes) and writing the fixed `data-extract-v2.py`.
+- **Running the retraining** that produced `model-02-best.pkl` and `model-03-best.pkl`.
+- **Small `chatbox.py` updates**: pointed it at the new vocab and checkpoint, added an unknown-character fallback so unseen characters don't crash it, fixed `decode` joining characters with spaces, and switched generation to `eval()` / `no_grad()`.
+- **`export_onnx.py`**: exports `model-03-best.pkl` to a quantized ONNX model (`web-model/`) so it can run in a browser.
+- **Git cleanup**: merging the remote history and flattening a duplicate nested folder.
+- **Writing most of this README**, including the evaluation write-up and results table below.
+
 ## Project Structure
 
 | File | Description |
