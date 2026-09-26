@@ -2,13 +2,14 @@ import mmap
 import random
 from collections import Counter
 
-TRAIN_FILE = "openwebtext/train_split.txt"
+TRAIN_FILE = "openwebtext/train_split_v2.txt"
 OUT_FILE = "openwebtext/vocab_clean.txt"
 
 NUM_CHUNKS = 300
 CHUNK_BYTES = 1_000_000  # 1MB per chunk -> ~300MB sampled total
 COVERAGE = 0.9998        # keep chars covering this much of sampled mass
 UNK_CHAR = '\x00'        # reserved fallback token for anything not in the clean vocab
+DOC_BOUNDARY = '\x01'    # reserved doc-boundary token written by data-extract-v2.py
 
 random.seed(1234)
 
@@ -17,7 +18,7 @@ counter = Counter()
 with open(TRAIN_FILE, 'rb') as f:
     with mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ) as mm:
         file_size = len(mm)
-        print(f"train_split.txt size: {file_size:,} bytes")
+        print(f"{TRAIN_FILE} size: {file_size:,} bytes")
         for i in range(NUM_CHUNKS):
             start = random.randint(0, file_size - CHUNK_BYTES)
             mm.seek(start)
@@ -48,6 +49,7 @@ vocab_set = set(kept)
 vocab_set.add(' ')
 vocab_set.add('\n')
 vocab_set.add(UNK_CHAR)
+vocab_set.add(DOC_BOUNDARY)
 
 vocab_chars = sorted(vocab_set)
 print(f"final vocab size: {len(vocab_chars)}")

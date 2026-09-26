@@ -172,7 +172,7 @@ class GPTLLM(nn.Module):
 
 model = GPTLLM(vocab_size)
 print('loading model parameters...')
-with open('model-02-best.pkl', 'rb') as f:
+with open('model-03-best.pkl', 'rb') as f:
     model = pickle.load(f)
 print('loaded successfully')
 m = model.to(device)

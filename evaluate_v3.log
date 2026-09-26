@@ -1,0 +1,60 @@
+device: cuda
+loading model parameters...
+loaded successfully
+
+===== PARAMETER COUNTS (model-03, cleaned vocab + corrected tar-parsed corpus) =====
+vocab_size: 199
+Total parameters: 14,438,599
+  token_embedding_table: 76,416
+  position_embedding_table: 98,304
+  lm_head: 76,615
+  embedding+lm_head combined: 153,031
+  transformer blocks (all 8 layers): 14,186,496
+
+===== VALIDATION LOSS (200 random batches, independent offsets, corrected corpus) =====
+Mean val loss: 1.1504 nats  (std across batches: 0.0949)
+Bits per character: 1.6597
+
+===== GENERATION SAMPLES =====
+
+--- prompt='The ' temperature=0.8 top_k=50 ---
+The disorder from a collaborative sanction called the Death Of Forces, including an attacker and headed down to the private arrangements last week.
+
+The Death Of Forces, said the private sector was lawfully going to decide this was not in chief management of forces that included the Death Of Forces, a planned commission.
+
+President Donald Trump was stopped finally at work with the Senate campaign on S
+
+--- prompt='The ' temperature=1.0 top_k=50 ---
+The FBI's Sheriff's Fevern Memorial resolution later rejected that Monroe had the unselected part of the visit, but he felt some of the important global powers he did not get studying.
+
+After the agreement, Monroe started deciding to write about Monroe's intimate institution, but their consent was released during a debate.
+
+Visit Amalgame on Coldplayton Game Station and local college stations present 
+
+--- prompt='In 2019, ' temperature=0.8 top_k=50 ---
+In 2019, but was pursued by a policemen, a British representative of Ports Council in Washington that he declared his campaign that his campaign is grim protection by the Justice Department in Ports County, ID.
+
+The Military Commission said the Court claimed that the authority would “protect” the safety of Kushner rules for the possible discrimination of the transfer cycle. The Court has leadership as an a
+
+--- prompt='In 2019, ' temperature=1.0 top_k=50 ---
+In 2019, “I've gone to India for a long time.” But they are not as a motivator for their incineration. They are designed to change national activism, but I don't think that background is such a big mutation based on the diseases, but taunts out of the mercile.
+
+In a single stretch of SQUICE forecasts, which is used in the unusual requirement of the national application viewing a biblical perversion by vide
+
+--- prompt='Scientists' temperature=0.8 top_k=50 ---
+Scientists have enough debate to transfer a key leftist into the universe. They have substances of the idea that the following eeries to have snagled the team for months ago.
+
+30
+
+The two debates from the country were generally believed to be "a major computer system in the landslide" in the first quarter of 2008. The Tasic Department allowed limited income to make all the attention, construction, and econo
+
+--- prompt='Scientists' temperature=1.0 top_k=50 ---
+Scientists’ experience: Development, A Diplomatic Medicine Center, some Countries vengeance extremists collected and sophisticating opportunities.
+
+The lobby project had supported a role in excruciated surveillance control agreements with a growing war resource to obtain many catchboard companies.
+
+
+
+Dicharge Center forum provides both reviews examined that the government's documents show financial increase
+
+===== DONE =====

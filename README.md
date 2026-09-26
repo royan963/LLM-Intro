@@ -8,17 +8,19 @@ A PyTorch implementation of a decoder-only, character-level GPT language model, 
 |---|---|
 | `llm.ipynb` | Starter notebook. Trains a simple bigram language model on `dracula.txt` to validate the training loop and data pipeline before scaling up. |
 | `gpt-v1.ipynb` | Full GPT model (self-attention, multi-head attention, transformer blocks) trained on the OpenWebText corpus. Notebook version of the main model. |
-| `training.py` | Original script version of the GPT training loop. Loads `model-01.pkl` and continues training with a flat learning rate. Kept for reference; `train_v2.py` supersedes it. |
-| `train_v2.py` | Improved training script: trains a fresh model on the cleaned vocab, `block_size=256`, warmup + cosine LR decay, gradient clipping, time-boxed with periodic checkpointing to `model-0N.pkl` / `model-0N-best.pkl`. |
+| `training.py` | Original script version of the GPT training loop. Loads `model-01.pkl` and continues training with a flat learning rate. Kept for reference; `train_v3.py` supersedes it. |
+| `train_v2.py` | Improved training script: fresh model on the cleaned vocab, `block_size=256`, warmup + cosine LR decay, gradient clipping, time-boxed with periodic checkpointing. Trained on the (still tar-corrupted) v1 corpus. |
+| `train_v3.py` | Same architecture/schedule as `train_v2.py`, retrained on the corrected (tar-parsed) corpus. **Current recommended checkpoint.** |
 | `chatbox.py` | Interactive command-line chat interface. Loads the current best checkpoint and generates text completions from user prompts. |
-| `evaluate.py` / `evaluate_v2.py` | Non-interactive evaluation: parameter counts, validation loss (nats + bits/char) averaged over many random batches, and sample generations at multiple temperatures. |
+| `evaluate.py` / `evaluate_v2.py` / `evaluate_v3.py` | Non-interactive evaluation: parameter counts, validation loss (nats + bits/char) averaged over many random batches, and sample generations at multiple temperatures. |
 | `build_vocab.py` | Builds a cleaned character vocabulary by sampling the corpus and keeping only characters above a frequency threshold (see *Known issues found & fixed* below). |
 | `data-extract.py` | Original OpenWebText extraction script. **Has a bug** — see below. Kept for reference. |
 | `data-extract-v2.py` | Corrected extraction script that properly parses the `.xz` archives as tar files instead of raw text. |
 | `torch-examples.ipynb` | Scratch notebook of PyTorch fundamentals (tensor ops, embeddings, softmax, matrix multiplication, CPU vs. GPU benchmarking) used while learning the building blocks for the model. |
 | `dracula.txt` | Small text corpus (public-domain novel) used for the early bigram prototype. |
-| `model-01.pkl` | Original checkpoint (53M params, 32k-char vocab). Not tracked in git (see `.gitignore`) — too large for GitHub. |
-| `model-02-best.pkl` | Best checkpoint from `train_v2.py` (14.5M params, cleaned 254-char vocab, `block_size=256`). Not tracked in git. |
+| `model-01.pkl` | Original checkpoint (53M params, 32k-char vocab, trained on the tar-corrupted corpus). Not tracked in git (see `.gitignore`) — too large for GitHub. |
+| `model-02-best.pkl` | Checkpoint from `train_v2.py` (14.5M params, 254-char vocab, `block_size=256`, still trained on the tar-corrupted corpus). Not tracked in git. **Not directly re-evaluable** — `vocab_clean.txt` was later regenerated for `model-03` and no longer matches its embedding indices; kept for historical reference only. |
+| `model-03-best.pkl` | Checkpoint from `train_v3.py` — same architecture, trained on the corrected corpus (14.4M params, 199-char vocab, matches the current `vocab_clean.txt`). **Use this one.** Not tracked in git. |
 
 ## Evaluation & fixes (this pass)
 
@@ -30,17 +32,17 @@ The original `model-01.pkl` was evaluated end-to-end (parameter breakdown, 200-b
 
 A fourth, more serious issue was found while testing the retrained model:
 
-4. **Corpus corruption from a tar-parsing bug.** The original OpenWebText `.xz` archives are actually **compressed tar files** (each contains hundreds of individual `<hash>.txt` documents). `data-extract.py` decoded the raw decompressed byte stream directly as UTF-8 text instead of parsing it as a tar archive, so `train_split.txt` / `val_split.txt` were contaminated throughout with tar headers and NUL padding (~11% of all bytes in a sampled region were literal `\x00`, plus tar entry names like `0999049-cf978a7f....txt` leaking in as if they were prose). `data-extract-v2.py` fixes this by opening each archive with Python's `tarfile` module and extracting only the genuine per-document text, separated by an explicit document-boundary character. This is being used to rebuild the corpus and retrain again.
+4. **Corpus corruption from a tar-parsing bug.** The original OpenWebText `.xz` archives are actually **compressed tar files** (each contains hundreds of individual `<hash>.txt` documents). `data-extract.py` decoded the raw decompressed byte stream directly as UTF-8 text instead of parsing it as a tar archive, so `train_split.txt` / `val_split.txt` were contaminated throughout with tar headers and NUL padding (~11% of all bytes in a sampled region were literal `\x00`, plus tar entry names like `0999049-cf978a7f....txt` leaking in as if they were prose). `data-extract-v2.py` fixes this by opening each archive with Python's `tarfile` module and extracting only the genuine per-document text, separated by an explicit document-boundary character, producing `train_split_v2.txt` / `val_split_v2.txt` (0% NUL bytes, verified). `train_v3.py` retrains the same architecture from scratch on this corrected corpus.
 
-| | model-01 (original) | model-02-best (vocab+context+schedule fix) |
-|---|---|---|
-| Parameters | 53,163,180 | 14,480,894 |
-| `vocab_size` | 32,172 | 254 |
-| `block_size` | 128 | 256 |
-| Val loss | 1.3095 nats | 1.0182 nats |
-| Bits/char | 1.889 | 1.469 |
+| | model-01 (original) | model-02-best (vocab+context+schedule fix) | model-03-best (+ corrected corpus) |
+|---|---|---|---|
+| Parameters | 53,163,180 | 14,480,894 | 14,438,599 |
+| `vocab_size` | 32,172 | 254 | 199 |
+| `block_size` | 128 | 256 | 256 |
+| Val loss | 1.3095 nats | 1.0182 nats | 1.1504 nats |
+| Bits/char | 1.889 | 1.469 | 1.660 |
 
-A further retrain on the corrected (tar-parsed) corpus is in progress; results will supersede the table above once complete.
+**The val-loss numbers above are not directly comparable across corpora.** model-01 and model-02 were evaluated on the *tar-corrupted* corpus, which contains long, highly repetitive, trivially-predictable byte sequences (NUL padding, fixed permission strings, tar magic bytes) — the model can nail those almost perfectly, which pulls the average loss down without reflecting genuine language-modeling skill. model-03 is trained and evaluated entirely on clean, real text with no such shortcut, so its higher raw loss actually reflects a *harder, more honest* task, not a worse model. Judged on generation samples instead, model-03 is a clear improvement: it produces properly structured multi-sentence paragraphs (correct paragraph breaks, consistent news-article style, recurring named entities within a passage) versus the more fragmented, run-on output of model-02, though it's still not semantically coherent over long spans and occasionally invents garbled words.
 
 ## Model Architecture
 
@@ -56,7 +58,7 @@ A further retrain on the corrected (tar-parsed) corpus is in progress; results w
 
 ### Hyperparameters
 
-| Parameter | `training.py` (original) | `train_v2.py` (current) |
+| Parameter | `training.py` (original) | `train_v2.py` / `train_v3.py` (current) |
 |---|---|---|
 | `batch_size` | 64 | 64 |
 | `block_size` (context length) | 128 | 256 |
@@ -65,7 +67,9 @@ A further retrain on the corrected (tar-parsed) corpus is in progress; results w
 | `n_head` | 8 | 8 |
 | `dropout` | 0.2 | 0.2 |
 | `learning_rate` | flat 3e-4 | warmup to 3e-4, cosine decay to 3e-5 |
-| stopping condition | fixed 5000 iters | time-boxed (default 4h), checkpointed periodically |
+| stopping condition | fixed 5000 iters | time-boxed (4h), checkpointed periodically |
+
+`train_v3.py` is identical to `train_v2.py` except for which corpus it reads — it exists as a separate file so both training runs and their checkpoints stay independently reproducible.
 
 Tokenization is **character-level**: `build_vocab.py` derives a frequency-cleaned vocabulary from the corpus, with simple `encode`/`decode` lookup dictionaries (no BPE/subword tokenization) plus a reserved UNK character for anything outside the vocab.
 
@@ -103,15 +107,15 @@ Run through `llm.ipynb` to train the bigram baseline model on `dracula.txt` and 
 ### 2. Train the full GPT model
 
 ```bash
-python train_v2.py
+python train_v3.py
 ```
 
-Trains a fresh model (vocab/context-size changes mean checkpoints aren't compatible across versions), prints periodic train/val loss with elapsed time and current LR, and checkpoints to `model-0N.pkl` (latest) and `model-0N-best.pkl` (lowest val loss) as it goes.
+Trains a fresh model (vocab/context-size changes mean checkpoints aren't compatible across versions) on the corrected corpus, prints periodic train/val loss with elapsed time and current LR, and checkpoints to `model-0N.pkl` (latest) and `model-0N-best.pkl` (lowest val loss) as it goes.
 
 ### 3. Evaluate a checkpoint
 
 ```bash
-python evaluate_v2.py
+python evaluate_v3.py
 ```
 
 Reports parameter breakdown, validation loss over 200 random batches (nats + bits/char), and sample generations at multiple temperatures.
