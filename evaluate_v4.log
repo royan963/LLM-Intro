@@ -1,0 +1,77 @@
+device: cuda
+block_size=256 batch_size=64 n_embd=384 n_layer=8 n_head=8 dropout=0.0
+max_lr=0.0003 min_lr=3e-05 warmup_iters=200 grad_clip=1.0
+time_budget_hours=4.0 eval_interval=500 eval_iters=100
+vocab_size: 199
+
+===== VALIDATION LOSS (200 batches x 64 independent sequences, same batches for every model, fp32) =====
+vocab_size: 199
+model-03-best: 14,438,599 params | val loss 1.1459 nats (+/- 0.0018 s.e.) | 1.6532 bits/char
+model-04-best: 14,438,599 params | val loss 1.0233 nats (+/- 0.0017 s.e.) | 1.4763 bits/char
+model-04-best - model-03-best: -0.1226 nats per char (paired s.e. 0.0005, model-04-best better on 200/200 batches)
+
+===== GENERATION SAMPLES (same random seed for each model) =====
+
+--- model-03-best | prompt='The ' temperature=0.8 top_k=50 ---
+The government can send the conditions to the ban on social media for the period that the society gets access to their uses.
+
+The death made the poorest government to support the government's security providers for liberty and support as the percentage of the society. It was sent to the province for either secretary of state professional cabinet partnership, the percentage of conservative government a
+
+--- model-04-best | prompt='The ' temperature=0.8 top_k=50 ---
+The golden version of Charlie Hebdo in The New York Times has also exaggerated to 2018 Times website The Richmond Hollow calendar. Based on that post, the community has made the cut within the crowd. Kenneth McCloskland and McCloskin also said the ad breaks through a $40 billion project in a crowdfunding lane that is made careful to within the community.
+
+"If you ever enjoy of yourself there's nothing
+
+--- model-03-best | prompt='The ' temperature=1.0 top_k=50 ---
+The golden version of Chris Billing/Diane Nagy and April 9, 1998 Ben Billing/Coron of Black”.
+
+**
+
+Twitter Pinteresting Activity by Lewlil Entangling
+
+1/6 UTC – Crystal Princess11, HMM Gibbon Lewlil Entangling Platform
+
+This club of BlackBeat Peter Luther Chris Chuck
+
+(It's also a huge application) and blockers unauthorizing them to return to Route H. Smash at My Grateful Drop (along with Maulers) for
+
+--- model-04-best | prompt='The ' temperature=1.0 top_k=50 ---
+The general public," he says. "It makes it less aggressive, accurate and special right now.”
+
+The general public, however, was ahead of many of the in-depth Crowdfunding publications and became a free manufacturer. The market looks as a commodity for the network and is a breakthrough of professional entrepreneurialism. “To me the price of working concepts has remained equally qualitative, so lets use 
+
+--- model-03-best | prompt='In 2019, ' temperature=0.8 top_k=50 ---
+In 2019, Germany was a pre-Chinese person in the coming months. The Bush administration would also be an interesting thing; the AFP and Republican government governments had made their chances to reveal that they had reclaimed it to get a safety of the President to stay about their headline and adopt their challenges to it.
+
+To make the statements worse, they said the efforts and factors are "outageous for
+
+--- model-04-best | prompt='In 2019, ' temperature=0.8 top_k=50 ---
+In 2019, German voting previously counted its average growth in 2019 (at before the result was somewhat close to 15%), this upcoming hedge fund was overhauled by Crowdfunding and the German Growth Industry Association told CNN.
+
+More than a dozen of contributors to the cable trade and the Currency founder in 2014 and the Commodore Trade Price Association have entered the top 1% of contributors to the Curre
+
+--- model-03-best | prompt='In 2019, ' temperature=1.0 top_k=50 ---
+In 2019, Germany Immigration Administration Tillerson governed the law for the period of detention.
+
+It could significantly use war. For an amendment to increase immigration and continue war, because of the revolutionarylic marijuana and international opposition to structures by questioning what to suffer in the election. The immigration wars have mostly been entailed by the many factors across the country
+
+--- model-04-best | prompt='In 2019, ' temperature=1.0 top_k=50 ---
+In 2019, German voting previously counted back to the government accusation that, as with the Justice Department, Christie’s state maintained that the Popular Party had this money to guarantee that a party would lobby the populist legacy in judicial control. The party won’t attempt to do business with Abel in late March. Compared to the state of the state, however, most other voter suppression reality will
+
+--- model-03-best | prompt='Scientists' temperature=0.8 top_k=50 ---
+Scientists that were caused by a second party investigation into the Bush administration of the International Forces Administration of Columbia. The overall investigation of a process concerned by the Security Council on land and a long-term judgment contributed to the Consulate Agency—that is also founded in the election. The investigation of the process could have been the case of the House of Rams suppor
+
+--- model-04-best | prompt='Scientists' temperature=0.8 top_k=50 ---
+Scientists emphasize that the paramilitary background and progression of the fusion, work on these websites and their trends is slow. Further research may be conducted for instance and use an interactive set of new features to disassociate the material from the fusion receptor by assessing the most fluid and broader substance of materials.
+
+Note: fusion makes a reach for the cover-free model to deal with. A
+
+--- model-03-best | prompt='Scientists' temperature=1.0 top_k=50 ---
+Scientists think verociously how things are happening against the American and Islamopolis when some bills are strange, this usually aim at wholesale spoof.
+
+The director of a public press release is a free provider for the Congressional Party that the AP’s decision to define the question of what to suffer in the election. But it’s the party’s culture. And the entity is full of many voters, who suffers from
+
+--- model-04-best | prompt='Scientists' temperature=1.0 top_k=50 ---
+Scientists emphasize cause in parallel with human cyber punishment, and the fact that while the species gets accurately designed were humans, many of them unknown to the degradation of the species as a fraction of offspring’s valuation of the cyber enterprise complex grounds, there are three ways to suffer in that triumph. The immune system that genetically moderate myself is many factors according to the m
+
+===== DONE =====
